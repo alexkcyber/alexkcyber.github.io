@@ -1,5 +1,5 @@
 .topnav {
-  margin: 0px 100px;
+  margin: 0px 0px;
   padding: 7px;
   background-color: #303336;
   overflow: hidden;
@@ -32,12 +32,9 @@
   padding: 0px 10px;
 }
 
-.container-right {
-  float: left;
-}
 .container {
   font-family: arial;
-  margin: 0px 100px;
+  margin: 0px 0px;
 }
 .container a {
   color: white;
@@ -61,7 +58,8 @@
   float: left;
   padding: 10px 10px;
   width: 300px;
-  margin: 0px 50px;
+  margin: 0px 0px;
+  border: 1px dotted black;
 }
 
 .container-card img {
@@ -82,10 +80,12 @@
 
 .container-right {
   background-color:#ddd;
-  height: 500px;
-  width: 1200px;
-  padding: 10px 15px;
+  padding: 10px 10px;
   font-family: arial;
+  margin: 0px 0px 0px 325px;
+  width: 50%
+  float: right;
+  border: 1px dotted black;
 }
 
 .heading {
