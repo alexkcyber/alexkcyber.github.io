@@ -5,6 +5,7 @@
   overflow: hidden;
   font-family: arial;
   top: 0;
+
 }
 
 .topnav a {
@@ -70,7 +71,10 @@
   padding: 0;
 }
 .container-card a {
-  background-color: #0077B5
+  background-color: #0077B5;
+  color: white;
+  display: inline-block;
+  border-radius: 8px;
 }
 
 .container-card a:hover {
@@ -83,7 +87,7 @@
   background-color:#ddd;
   padding: 10px 10px;
   font-family: arial;
-  margin: 0px 0px 0px 330px;
+  margin: 0px 100px 0px 430px;
   outline: 1px solid black;
 }
 
@@ -113,6 +117,12 @@
 .flex-child {
     flex: 1;
     background-color: #efefef;
+    padding: 20px 0px 0px 20px;
+    font-size:3vw;
+    height: 20vw;
+}
+.flex-empty {
+    flex: 1;
     padding: 20px 0px 0px 20px;
     font-size:3vw;
     height: 20vw;
@@ -162,9 +172,23 @@
   font-size: 1vw;
 }
 
+.project-heading {
+  border-bottom: 1px solid #0077B5;
+  padding-bottom: 18px;
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 60px;
+  margin-right: 60px;
+  font-family: arial;
+}
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.nounderline {
+  text-decoration: none !important
 }

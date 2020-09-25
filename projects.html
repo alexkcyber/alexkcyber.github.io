@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 
+
 <html>
 
   <head>
     <link rel="stylesheet" href="styles.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   </head>
 
   <div class="topnav">
-    <a href="index.html" style="font-size: 25px;">Alexander Korobchuk Cybersecurity</a>
+    <a href="index.html" class="nounderline" style="font-size: 25px;">Alexander Korobchuk Cybersecurity</a>
     <div class="topnav-right">
-      <a href="index.html">Home</a>
-      <a class="active" href="projects.html">Projects</a>
-      <a href="aboutme.html">About Me</a>
+      <a href="index.html" class="nounderline">Home</a>
+      <a class="active nounderline" href="projects.html">Projects</a>
+      <a href="aboutme.html" class="nounderline">About Me</a>
     </div>
   </div>
 
 <br /><br />
 
+<div class="project-heading">WORK RELATED</div>
+<br /><br />
+
 <div class="flex-container">
 
-  <div class="flex-child">
+  <div class="flex-child" data-toggle="modal" data-target="#vsmic">
     Virtual Strategic Missile Integration Complex
 
   </div>
 
-  <div class="flex-child">
+  <div class="flex-child" data-toggle="modal" data-target="#c2ic">
     Colorado Cyber Innovation Center
   </div>
 
@@ -32,15 +39,107 @@
 <br /><br />
 <div class="flex-container">
 
-  <div class="flex-child">
+  <div class="flex-child" data-toggle="modal" data-target="#crada">
     Cooperative Research and Development Agreement
   </div>
 
-  <div class="flex-child">
-    Networking Error Control
+  <div class="flex-empty">
+
   </div>
 
 </div>
+
+<br /><br />
+<div class="project-heading">SCHOOL RELATED</div>
+<br /><br />
+<div class="flex-container">
+
+  <div class="flex-child" data-toggle="modal" data-target="#networking">
+    Networking Error Control
+  </div>
+  <div class="flex-empty">
+
+  </div>
+
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="vsmic" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg vertical-align-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Virtual Strategic Missile Integration Complex</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This is the body
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="c2ic" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg vertical-align-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Colorado Cyber Innovation Center</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This is the body
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="crada" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg vertical-align-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Cooperative Research and Development Agreement</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This is the body
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="networking" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg vertical-align-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Networking Error Control</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        This is the body
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 </html>
