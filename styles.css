@@ -36,6 +36,7 @@
   font-family: arial;
   margin: 0px 0px;
 }
+
 .container a {
   color: white;
   text-decoration: none;
@@ -59,7 +60,7 @@
   padding: 10px 10px;
   width: 300px;
   margin: 0px 0px;
-  border: 1px dotted black;
+  outline: 1px solid black;
 }
 
 .container-card img {
@@ -83,16 +84,82 @@
   padding: 10px 10px;
   font-family: arial;
   margin: 0px 0px 0px 330px;
-  width: 50%
-  float: right;
-  border: 1px dotted black;
+  outline: 1px solid black;
+}
+
+.project-container {
+  font-family: arial;
+  margin: 0px 100px;
+}
+
+.project-right {
+  background-color: #efefef;
+	color: #000;
+	height: 300px;
+	width: 40%;
+	float: right;
+  font-size: 3vw;
+  margin-top: 50px;
+  padding: 50px;
+
+}
+
+.flex-container {
+    display: flex;
+    margin: 0px 100px;
+    font-family: arial;
+}
+
+.flex-child {
+    flex: 1;
+    background-color: #efefef;
+    padding: 20px 0px 0px 20px;
+    font-size:3vw;
+    height: 20vw;
+}
+
+.flex-child:first-child {
+    margin-right: 50px;
+}
+
+.flex-child:hover {
+  background-color: #6999B9;
+  color: white;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.project-right:hover {
+  background-color: #6999B9;
+  color: white;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.project-left {
+  background-color: #efefef;
+	color: #000;
+	height: 300px;
+	width: 40%;
+	float: left;
+  font-size: 3vw;
+  margin-top: 50px;
+  padding: 50px;
+
+}
+
+.project-left:hover {
+  background-color: #6999B9;
+  color: white;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .heading {
   border-bottom: 1px solid #0077B5;
   padding-bottom: 18px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
 }
 
 .center {
