@@ -89,23 +89,8 @@
   font-family: arial;
   margin: 0px 100px 0px 430px;
   outline: 1px solid black;
-}
-
-.project-container {
-  font-family: arial;
-  margin: 0px 100px;
-}
-
-.project-right {
-  background-color: #efefef;
-	color: #000;
-	height: 300px;
-	width: 40%;
-	float: right;
-  font-size: 3vw;
-  margin-top: 50px;
-  padding: 50px;
-
+  min-width: 50%;
+  font-size: 18px;
 }
 
 .flex-container {
@@ -117,13 +102,13 @@
 .flex-child {
     flex: 1;
     background-color: #efefef;
-    padding: 20px 0px 0px 20px;
-    font-size:3vw;
-    height: 20vw;
+    padding: 30px;
+    font-size:35px;
+    height: 16vw;
 }
 .flex-empty {
     flex: 1;
-    padding: 20px 0px 0px 20px;
+    padding: 30px;
     font-size:3vw;
     height: 20vw;
 }
@@ -139,37 +124,11 @@
   cursor: pointer;
 }
 
-.project-right:hover {
-  background-color: #6999B9;
-  color: white;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.project-left {
-  background-color: #efefef;
-	color: #000;
-	height: 300px;
-	width: 40%;
-	float: left;
-  font-size: 3vw;
-  margin-top: 50px;
-  padding: 50px;
-
-}
-
-.project-left:hover {
-  background-color: #6999B9;
-  color: white;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
 .heading {
   border-bottom: 1px solid #0077B5;
   padding-bottom: 18px;
   font-weight: bold;
-  font-size: 1vw;
+  font-size: 19px;
 }
 
 .project-heading {
@@ -191,4 +150,13 @@
 
 .nounderline {
   text-decoration: none !important
+}
+
+html {
+  min-height: 100%;
+}
+body {
+  min-width: 100%;
+  background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+
 }
