@@ -103,14 +103,15 @@
     flex: 1;
     background-color: #efefef;
     padding: 30px;
-    font-size:35px;
+    font-size:calc(12px + 1.2vw);
     height: 16vw;
+
 }
 .flex-empty {
-    flex: 1;
-    padding: 30px;
-    font-size:3vw;
-    height: 20vw;
+  flex: 1;
+  padding: 30px;
+  font-size:calc(12px + 1.2vw);
+  height: 16vw;
 }
 
 .flex-child:first-child {
