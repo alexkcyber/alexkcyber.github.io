@@ -38,6 +38,12 @@
   margin: 0px 0px;
 }
 
+.project-container {
+  font-family: arial;
+  margin: 0px 75px;
+}
+
+
 .container a {
   color: white;
   text-decoration: none;
@@ -85,9 +91,8 @@
 
 .container-right {
   background-color:#ddd;
-  padding: 10px 10px;
+  padding: 20px 20px;
   font-family: arial;
-  margin: 0px 100px 0px 430px;
   outline: 1px solid black;
   min-width: 50%;
   font-size: 18px;
