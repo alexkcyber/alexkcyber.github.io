@@ -63,6 +63,18 @@
   </div>
 
 </div>
+<br /><br />
+<div class="flex-container">
+
+  <div class="flex-child" data-toggle="modal" data-target="#socket">
+    Socket Programming
+  </div>
+
+  <div class="flex-empty">
+
+  </div>
+
+</div>
 
 <br /><br />
 <div class="modal fade bd-example-modal-lg" id="vsmic" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -99,7 +111,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <img src="images/c2ic.jpg" alt="C2IC Image" class="center" style="height:30%;width:30%;"> <br />
+        <img src="images/c2ic.jpg" alt="C2IC Image" class="center" style="height:35%;width:35%;"> <br />
         Architected a new solution to enhance the current network infrastructure. This aimed for multiple virtual local area networks to enable the virtual separation of physical labs. <br /><br />
         This was important because the new architecture would allow for simultaneous cyber assessments across all lab locations. This is due to the fact that cyber assessments can be very heavy on a network, so by separating locations on
         separate VLANs, this gives the opportunity for multiple cyber assessments without the worry of network congestion.
@@ -121,7 +133,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <img src="images/crada.jpg" alt="C2IC Image" class="center" style="height:30%;width:30%;"> <br />
+        <img src="images/crada.jpg" alt="C2IC Image" class="center" style="height:40%;width:40%;"> <br />
         The power usage and thermal output of the equipment in the cyber lab was researched. This enabled the creation of detailed documentation that outlined the typical and maximum power usage/thermal output.<br /><br />
         As a result, this ensured that the cooling and power was sufficient to handle the equipment. This is important because servers can cost $30,000, and if they were to overheat and become permanetly damaged, this could be a large
         setback.
@@ -143,7 +155,11 @@
         </button>
       </div>
       <div class="modal-body">
-        This is the body
+        <img src="images/error.jpg" alt="Network Error Image" class="center" style="height:50%;width:50%;"> <br />
+        Developed a network error control program written in the C programming language. The program would input a bit stream of a message and then convert it to a frame. <br /><br />
+        It would then use Cyclic Redundancy Check (CRC) as well as Hamming
+        for single bit error detection and correction.<br /><br />
+        <a href="networkingerrorcontrol.c" class="nounderline" target="_blank">See the code here</a>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -162,7 +178,44 @@
         </button>
       </div>
       <div class="modal-body">
-        This is the body
+        <img src="images/vuln.png" alt="Vulnerability Image" class="center" style="height:50%;width:50%;"> <br />
+        Performed enumeration on multiple vulnerable machines. Would find various exploits and security flaws in order to gain unauthorized access.<br /><br />
+        Created detailed documentation on the various attacks used and also how to prevent them from happening again in the future. The documentation followed a five stage sequence of an attack:
+
+        <ol>
+          <li>Reconnaissance</li>
+          <li>Initial Exploitation</li>
+          <li>Establish Persistence</li>
+          <li>Move Laterally</li>
+          <li>Collect, Exfil, and Exploit</li>
+      </ol>
+
+      <a href="vulndoc.pdf" class="nounderline" target="_blank">See one of the documents here</a>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="socket" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg vertical-align-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Socket Programming</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="images/socket.png" alt="Socket Image" class="center" style="height:50%;width:50%;"> <br />
+        Wrote a program in the C programming language that used socket programming to transfer files between a client and a server. The Transmission Control Protocol (TCP) was used. <br /><br />
+        The server would listen for a client to connect and for the client to request a file. Then, the server would send the data of that file to the client, where the client would put the bytes together to create the original and
+        unmodified version of the same file.<br /><br />
+        <a href="socketclient.c" class="nounderline" target="_blank">See the client code here</a><br /><br />
+        <a href="socketserver.c" class="nounderline" target="_blank">See the server code here</a>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
