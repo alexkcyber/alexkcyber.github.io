@@ -1,230 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <title>Alex - Cyber</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="list-group">
+          <div class="list-group-item hoverable">
+            <div class="text-center">
+              <a href="index.html" style="text-decoration: none">
+                <p class="headline">Alexander Korobchuk</p>
+                <img class="my-image" src="images/profile.jpg" />
+              </a>
+            </div>
+          </div>
+
+          <a href="index.html" class="list-group-item hoverable" style="color: #333333;">About</a>
+          <a href="projects.html" class="list-group-item hoverable" style="color: #333333;">Projects</a>
+          <a href="research.html" class="list-group-item hoverable" style="color: #333333;">Research</a>
+        </div>
+
+        <div class="list-group" style="margin-top: 10px;">
+          <a href="resume.html" class="list-group-item hoverable" style="color: #333333;">Resume</a>
+          <a href="https://www.linkedin.com/in/alexander-korobchuk/" target="_blank" class="list-group-item hoverable" style="color: #333333;">LinkedIn</a>
+        </div>
 
 
-<html>
-
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <link rel="icon" href="images/icon.png">
-    <title>Projects • AlexKCyber</title>
-  </head>
-
-  <div class="topnav">
-    <a href="index.html" class="nounderline" style="font-size: 25px;">Alexander Korobchuk Cybersecurity</a>
-    <div class="topnav-right">
-      <a href="index.html" class="nounderline">Home</a>
-      <a class="active nounderline" href="projects.html">Projects</a>
-      <a href="aboutme.html" class="nounderline">About Me</a>
-    </div>
-  </div>
-
-<br /><br />
-
-<div class="project-heading">PROFESSIONAL EXPERIENCE</div>
-<br /><br />
-
-<div class="flex-container">
-
-  <div class="flex-child" data-toggle="modal" data-target="#vsmic">
-    Virtual Strategic Missile Integration Complex
-
-  </div>
-
-  <div class="flex-child" data-toggle="modal" data-target="#c2ic">
-    Colorado Cyber Innovation Center
-  </div>
-
-</div>
-<br /><br />
-<div class="flex-container">
-
-  <div class="flex-child" data-toggle="modal" data-target="#crada">
-    Cooperative Research and Development Agreement
-  </div>
-
-  <div class="flex-empty">
-
-  </div>
-
-</div>
-
-<br /><br />
-<div class="project-heading">ACADEMIC EXPERIENCE</div>
-<br /><br />
-<div class="flex-container">
-
-  <div class="flex-child" data-toggle="modal" data-target="#networking">
-    Networking Error Control
-  </div>
-  <div class="flex-child" data-toggle="modal" data-target="#vulndoc">
-    Vulnerability Documentation
-  </div>
-
-</div>
-<br /><br />
-<div class="flex-container">
-
-  <div class="flex-child" data-toggle="modal" data-target="#socket">
-    Socket Programming
-  </div>
-
-  <div class="flex-empty">
-
-  </div>
-
-</div>
-
-<br /><br />
-<div class="modal fade bd-example-modal-lg" id="vsmic" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg vertical-align-center">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Virtual Strategic Missile Integration Complex</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
-      <div class="modal-body">
-        <img src="images/smic.jpg" alt="SMIC Image" class="center" style="height:30%;width:30%;"> <br />
-        There is a need to be able to perform cyber assessments on the Air Force's Strategic Missile Integration Complex (SMIC). This is difficult to accomplish due to the fact that the SMIC was created before the invention of <thead>
-          internet. <br /><br />
-          A script was developed that automates the validation/verification of simulated weapon system circuits. The script automatically performs comprehensive tests and returns the results in a matter of seconds. This was an
-          important effort because manual testing took many hours of tedious work and the script reduced this time greatly.
-        </thead>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+      <div class="col-sm-9">
+        <div class="row media-group">
+          <div class="col-md-12">
+            <div class="list-group">
+              <div class="list-group-item">
+                <div class="title headline">Professional Projects</div>
+                <div class="row media-group" style="padding-top: 10px;">
+                  <div class="col-md-6">
+                    <div class="list-group">
+                      <a href="vsmic.html"><div class="list-group-item hoverable" style="padding: 0px;">
+                        <img src="images/smic.png" style="width: 100%; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+                        <div class="project-text">
+                        <div class="black"><h5>Virtual Strategic Missile Integration Complex</h></div>
+                          <p class="text-muted">My contributions to the nuclear enterprise</p>
+                          </div>
+                      </div></a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="list-group">
+                      <a href="c2ic.html"><div class="list-group-item hoverable media-group" style="padding: 0px;">
+                        <img src="images/cyber_lab.jpg" style="width: 100%; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+                        <div class="project-text">
+                        <div class="black"><h5>Colorado Cyber Innovation<br /> Center</h></div>
+                          <p class="text-muted">Assisted with the improvements of a cyber lab</p>
+                          </div>
+                      </div></a>
+                    </div>
+                  </div>
+                </div>
 
-<div class="modal fade bd-example-modal-lg" id="c2ic" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg vertical-align-center">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Colorado Cyber Innovation Center</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="images/c2ic.jpg" alt="C2IC Image" class="center" style="height:35%;width:35%;"> <br />
-        Architected a new solution to enhance the current network infrastructure. This aimed for multiple virtual local area networks to enable the virtual separation of physical labs. <br /><br />
-        This was important because the new architecture would allow for simultaneous cyber assessments across all lab locations. This is due to the fact that cyber assessments can be very heavy on a network, so by separating locations on
-        separate VLANs, this gives the opportunity for multiple cyber assessments without the worry of network congestion.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+                <div class="row" style="padding-top: 10px;">
+                  <div class="col-md-6">
+                    <div class="list-group">
+                      <a href="crada.html"><div class="list-group-item hoverable" style="padding: 0px;">
+                        <img src="images/crada.jpg" style="width: 100%; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+                        <div class="project-text">
+                        <div class="black"><h5>Cooperative Research and Development Agreement</h></div>
+                          <p class="text-muted">Contributed with the maintenence of a cyber lab</p>
+                          </div>
+                      </div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<div class="modal fade bd-example-modal-lg" id="crada" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg vertical-align-center">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Cooperative Research and Development Agreement</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="images/crada.jpg" alt="C2IC Image" class="center" style="height:40%;width:40%;"> <br />
-        The power usage and thermal output of the equipment in the cyber lab was researched. This enabled the creation of detailed documentation that outlined the typical and maximum power usage/thermal output.<br /><br />
-        As a result, this ensured that the cooling and power was sufficient to handle the equipment. This is important because servers can cost $30,000, and if they were to overheat and become permanetly damaged, this could be a large
-        setback.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div class="row" style="padding-top: 10px;">
+          <div class="col-md-12">
+            <div class="list-group">
+              <div class="list-group-item">
+                <div class="title headline">Academic Projects</div>
+                <div class="row" style="padding-top: 10px;">
+                  <div class="col-md-6">
+                    <div class="list-group">
+                      <a href="networking.html"><div class="list-group-item hoverable media-group" style="padding: 0px;">
+                        <img src="images/error.jpg" style="width: 100%; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+                        <div class="project-text">
+                        <div class="black"><h5>Networking Error Control</h></div>
+                          <p class="text-muted">Developed an error control program to detect and correct bit errors</p>
+                          </div>
+                      </div></a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="list-group">
+                      <a href="vuln.html"><div class="list-group-item hoverable media-group" style="padding: 0px;">
+                        <img src="images/vuln.png" style="width: 100%; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+                        <div class="project-text">
+                        <div class="black"><h5>Vulnerability Documentation</h></div>
+                          <p class="text-muted">Documented the process of exploiting various machines</p>
+                          </div>
+                      </div></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row" style="padding-top: 10px;">
+                  <div class="col-md-6">
+                    <div class="list-group">
+                      <a href="socket.html"><div class="list-group-item hoverable" style="padding: 0px;">
+                        <img src="images/socket.png" style="width: 100%; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+                        <div class="project-text">
+                        <div class="black"><h5>Socket Programming</h></div>
+                          <p class="text-muted">Created a program to transfer files between a client and a server</p>
+                          </div>
+                      </div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
+
+
+
   </div>
-</div>
 
-<div class="modal fade bd-example-modal-lg" id="networking" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg vertical-align-center">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Networking Error Control</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="images/error.jpg" alt="Network Error Image" class="center" style="height:50%;width:50%;"> <br />
-        Developed a network error control program written in the C programming language. The program would input a bit stream of a message and then convert it to a frame. <br /><br />
-        It would then use Cyclic Redundancy Check (CRC) as well as Hamming
-        for single bit error detection and correction.<br /><br />
-        <a href="networkingerrorcontrol.c" class="nounderline" target="_blank">See the code here</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade bd-example-modal-lg" id="vulndoc" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg vertical-align-center">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Vulnerability Documentation</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="images/vuln.png" alt="Vulnerability Image" class="center" style="height:50%;width:50%;"> <br />
-        Performed enumeration on multiple vulnerable machines. Would find various exploits and security flaws in order to gain unauthorized access.<br /><br />
-        Created detailed documentation on the various attacks used and also how to prevent them from happening again in the future. The documentation followed a five stage sequence of an attack:
-
-        <ol>
-          <li>Reconnaissance</li>
-          <li>Initial Exploitation</li>
-          <li>Establish Persistence</li>
-          <li>Move Laterally</li>
-          <li>Collect, Exfil, and Exploit</li>
-      </ol>
-
-      <a href="vulndoc.pdf" class="nounderline" target="_blank">See one of the documents here</a>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade bd-example-modal-lg" id="socket" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg vertical-align-center">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Socket Programming</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="images/socket.png" alt="Socket Image" class="center" style="height:50%;width:50%;"> <br />
-        Wrote a program in the C programming language that used socket programming to transfer files between a client and a server. The Transmission Control Protocol (TCP) was used. <br /><br />
-        The server would listen for a client to connect and for the client to request a file. Then, the server would send the data of that file to the client, where the client would put the bytes together to create the original and
-        unmodified version of the same file.<br /><br />
-        <a href="socketclient.c" class="nounderline" target="_blank">See the client code here</a><br /><br />
-        <a href="socketserver.c" class="nounderline" target="_blank">See the server code here</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

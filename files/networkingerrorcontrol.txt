@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include <stdbool.h> 
+#include <stdbool.h>
 #include <ctype.h>
 
 //Code written by: Alexander Korobchuk
@@ -215,14 +215,14 @@ void main()
 	printf("\n");
 	CRCMethod(bitStream, generator);
 	// SELF-TESTING FUNCTION CALLS *******************************************************************
-	
+
 	return 0;
 }
 
 // 1.1 CONVERTS A BIT STREAM OF A MESSAGE INTO A FRAME BY USING HAMMING CODING--------------------------------------------------------------------------------------------------------------
 
 // Converts a dataMessage into a frame using Hamming coding. Prints the result.
-void HammingMethod(char dataMessage[64]) 
+void HammingMethod(char dataMessage[64])
 {
 
 	// Check to see if the string is a valid binary number.
@@ -235,7 +235,7 @@ void HammingMethod(char dataMessage[64])
 			return;
 		}
 	}
-	
+
 
 	int m = strlen(dataMessage); // Length of the dataMessage.
 	int r = 1; // Number of parity bits required for the dataMessage. 1 is default.
@@ -269,7 +269,7 @@ void HammingMethod(char dataMessage[64])
 	// Place the parity bits as zero as well as original dataMessage into one single dataFrame.
 	for (int i = 0; i <= m+r; i++)
 	{
-		
+
 		dataFrame[i] = dataMessage[counter];
 
 		for (int j = 0; j < sizeof(parityPos) / sizeof(parityPos[0]); j++)
@@ -307,7 +307,7 @@ void HammingMethod(char dataMessage[64])
 			dataFrame[parityPos[i] - 1] = '1';
 		}
 	}
-	
+
 	printf("Final Frame: ");
 	// Print out the entire dataFrame.
 	for (int j = 0; j < strlen(dataFrame); j++) {
@@ -331,7 +331,7 @@ void HammingCorrection(char dataFrame[71])
 			return;
 		}
 	}
-	
+
 	// Goes through the dataFrame and determines the bits that are parity bits.
 	int parityPos[7]; // Holds the positions of all the parity bits in the dataFrame.
 	int counter = 0;
@@ -443,11 +443,11 @@ void HammingCorrection(char dataFrame[71])
 	printf("Original Message: ");
 	for (int i = 0; i < strlen(dataFrame); i++)
 	{
-		if (dataFrame[i] != '-') 
+		if (dataFrame[i] != '-')
 		{
 			printf("%c", dataFrame[i]);
 		}
-		
+
 	}
 	printf("\n");
 }
@@ -502,7 +502,7 @@ void CRCMethod(char bitStream[128], char generator[16])
 		if (finish == true)
 		{
 			goOn = false; // We must set goOn to false.
-			
+
 			counter = genLength - counter; // Counter becomes how many bits we need to append.
 
 			int onePos = 0; // Stores the position we find zero. Go through the holder until we hit zero.
@@ -568,7 +568,7 @@ void CRCMethod(char bitStream[128], char generator[16])
 				{
 					counter -= 1;
 				}
-				else 
+				else
 				{
 					break;
 				}
