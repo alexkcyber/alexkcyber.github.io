@@ -37,7 +37,7 @@
       </div>
       <div class="col-sm-9">
         <div class="list-group">
-          <div class="list-group-item media-group">
+          <div class="list-group-item media-group" id="resume">
             Can't see it? <a href="files/Alex_Resume.pdf" target="_blank">Click here</a> to open into a new tab.
             <object data="files/Alex_Resume.pdf" type="application/pdf" width="100%" height="1000px"></object>
           </div>
@@ -55,5 +55,15 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script>var my_element = document.getElementById("resume");
+  if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+  }else{
+    my_element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
+  </script>
 </body>
 </html>
