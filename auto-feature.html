@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <title>Alex - Cyber</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="list-group">
+          <div class="list-group-item hoverable">
+            <div class="text-center">
+              <a href="index.html" style="text-decoration: none">
+                <p class="headline">Alexander Korobchuk</p>
+                <img class="my-image" src="images/profile.jpg" />
+              </a>
+            </div>
+          </div>
+
+          <a href="index.html" class="list-group-item hoverable" style="color: #333333;">About</a>
+          <a href="projects.html" class="list-group-item hoverable" style="color: #333333;">Projects</a>
+          <a href="research.html" class="list-group-item hoverable" style="color: #333333;">Research</a>
+        </div>
+
+        <div class="list-group" style="margin-top: 10px;">
+          <a href="resume.html" class="list-group-item hoverable" style="color: #333333;">Resume</a>
+          <a href="https://www.linkedin.com/in/alexander-korobchuk/" target="_blank" class="list-group-item hoverable" style="color: #333333;">LinkedIn</a>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="list-group">
+          <div class="list-group-item media-group" id="auto_feature">
+            <div class="title headline" style="text-align: center;">Automatic Feature Extraction for Network Security Datasets</div>
+            <p style="text-align:center; padding-top: 10px;"> <img src="images/machine_learning.jpg" style="width: 75%; border-radius: 10px;"></p>
+            <p style="padding-top: 10px;">A common challenge in any machine learning task is constructing the proper dataset. This challenge becomes greater when the task is for network security, such as for an intrusion detection system. <br /><br /> For instance, hand picking features from network packets to use in classification tasks can be a strenuous process. Furthermore, every network is different, therefore it is difficult to create a dataset that can represent most networks.
+              Thus, there is a need for the ability to easily create custom datasets that are tailored to a specific network. <br /><br /> In this research, the potential of creating datasets by automatically extracting features from network packets is explored. Attacks are simulated by using common enumeration tools utilized by hackers, while also capturing all the packets on the network. <br /><br /> The packet data is preprocessed and used to train a Word2Vec neural network model, of which features are automatically extracted from each packet and compiled as a vector representation. Using the vectors, a dataset can be created, thus being a simple means to formulate a custom-tailored dataset to a network. <br /><br /> The results are shown by applying the datasets to a logistic regression machine learning model for the classification task of malicious and benign network packets.
+            </p>
+            <div class="title headline" style="">The Process</div>
+            <p style="padding-top: 20px;">
+              The first thing I do is I capture packets on the network. While I do this, I start using the enumeration tool for that specific trial. Throughout my trails, I used <a href="https://en.wikipedia.org/wiki/Nmap" target="_blank">nmap</a>, <a href="https://en.wikipedia.org/wiki/Nikto_(vulnerability_scanner)" target="_blank">nikto</a>, and <a href="https://tools.kali.org/web-applications/dirb#:~:text=DIRB%20is%20a%20Web%20Content,server%20and%20analyzing%20the%20response.&text=Also%20DIRB%20sometimes%20can%20be,scanner%20not%20a%20vulnerability%20scanner." target="_blank">dirb</a>. After a set amount of time has passed, the capture completes. The program I wrote then creates a "pcap" file and a text file containing
+              the number identification of each packet that was malicious. The malicious packets are the ones created by the enumeration tool.
+              <br /><br />
+              Then I perform preprocessing on the raw packet data. This includes remove the source and destination IP (so that the logistic regression machine learning model does not pick up on this), I lowercase the packet, and I remove anything that isn't a number or a letter.
+
+              <br /><br />
+              I then feed it into a <a href="https://en.wikipedia.org/wiki/Word2vec" target="_blank">Word2Vec</a> neural network model. One useful thing about Word2Vec is it can return 1xN
+              word embeddings (word vectors). The issue is that these vectors only represent the individual words of the packets. So I have to perform a summation of all of the vectors in the packet, and then divide by the number of packets. This returns a vector representation of an entire packet rather than an individual word.
+
+              <br /><br />
+              Each number in the vector is then declared a feature for machine learning datasets. I compile a dataset with every packet vector.
+            </p>
+
+            <div class="title headline" style="">The Results</div>
+            <p style="padding-top: 20px;">I performed a total of  5 trials. The first being with nmap, then a stealth nmap scan, a nikto scan, a dirb scan, and finally I combine the three tools. Here are the packet numbers in each trial.<br />
+             <pre>╔══════════════╦═══════════════╦═══════════════════╦═════════════╗
+║              ║ Total Packets ║ Malicious Packets ║ % Malicious ║
+╠══════════════╬═══════════════╬═══════════════════╬═════════════╣
+║     nmap     ║     78,495    ║       2,023       ║     2.58    ║
+╠══════════════╬═══════════════╬═══════════════════╬═════════════╣
+║ nmap_stealth ║     51,373    ║         57        ║     0.11    ║
+╠══════════════╬═══════════════╬═══════════════════╬═════════════╣
+║     nikto    ║     58,066    ║       10,857      ║    18.70    ║
+╠══════════════╬═══════════════╬═══════════════════╬═════════════╣
+║     dirb     ║     80,422    ║       7,410       ║     9.21    ║
+╠══════════════╬═══════════════╬═══════════════════╬═════════════╣
+║   all_tools  ║    109,115    ║       19,474      ║    17.85    ║
+╠══════════════╬═══════════════╬═══════════════════╬═════════════╣
+║    average   ║    75,494.2   ║      7,964.2      ║     9.69    ║
+╚══════════════╩═══════════════╩═══════════════════╩═════════════╝</pre>
+              After creating the datasets using the packet captures, I then trained a logistic regression machine learning model. Here are the results, starting with precision, recall, and then f1 score. Note: 1x10 indicates that the vector representation of a packet was 10 dimensional.<br /><br />
+              <pre>╔══════════════╦════════════════╦════════════════╦════════════════╦═════════════════╗
+║              ║ 1x10 Precision ║ 1x25 Precision ║ 1x50 Precision ║ 1x100 Precision ║
+╠══════════════╬════════════════╬════════════════╬════════════════╬═════════════════╣
+║     nmap     ║      0.90      ║      0.92      ║      0.95      ║       0.96      ║
+╠══════════════╬════════════════╬════════════════╬════════════════╬═════════════════╣
+║ nmap_stealth ║      0.49      ║      0.44      ║      0.77      ║       0.62      ║
+╠══════════════╬════════════════╬════════════════╬════════════════╬═════════════════╣
+║     nikto    ║      0.76      ║      0.88      ║      0.90      ║       0.90      ║
+╠══════════════╬════════════════╬════════════════╬════════════════╬═════════════════╣
+║     dirb     ║      0.79      ║      0.93      ║      0.96      ║       0.99      ║
+╠══════════════╬════════════════╬════════════════╬════════════════╬═════════════════╣
+║   all_tools  ║      0.83      ║      0.89      ║      0.88      ║       0.93      ║
+╠══════════════╬════════════════╬════════════════╬════════════════╬═════════════════╣
+║    average   ║      0.754     ║      0.812     ║      0.892     ║      0.880      ║
+╚══════════════╩════════════════╩════════════════╩════════════════╩═════════════════╝</pre>
+              <pre>╔══════════════╦═════════════╦═════════════╦═════════════╦══════════════╗
+║              ║ 1x10 Recall ║ 1x25 Recall ║ 1x50 Recall ║ 1x100 Recall ║
+╠══════════════╬═════════════╬═════════════╬═════════════╬══════════════╣
+║     nmap     ║      1      ║      1      ║      1      ║       1      ║
+╠══════════════╬═════════════╬═════════════╬═════════════╬══════════════╣
+║ nmap_stealth ║      1      ║      1      ║      1      ║       1      ║
+╠══════════════╬═════════════╬═════════════╬═════════════╬══════════════╣
+║     nikto    ║     0.54    ║     0.94    ║     0.99    ║     0.99     ║
+╠══════════════╬═════════════╬═════════════╬═════════════╬══════════════╣
+║     dirb     ║     0.51    ║     0.71    ║     0.78    ║     0.81     ║
+╠══════════════╬═════════════╬═════════════╬═════════════╬══════════════╣
+║   all_tools  ║     0.82    ║     0.94    ║     0.98    ║     0.99     ║
+╠══════════════╬═════════════╬═════════════╬═════════════╬══════════════╣
+║    average   ║    0.774    ║    0.918    ║    0.950    ║     0.958    ║
+╚══════════════╩═════════════╩═════════════╩═════════════╩══════════════╝</pre>
+              <pre>╔══════════════╦═════════╦═════════╦═════════╦══════════╗
+║              ║ 1x10 F1 ║ 1x25 F1 ║ 1x50 F1 ║ 1x100 F1 ║
+╠══════════════╬═════════╬═════════╬═════════╬══════════╣
+║     nmap     ║   0.95  ║   0.96  ║   0.97  ║   0.98   ║
+╠══════════════╬═════════╬═════════╬═════════╬══════════╣
+║ nmap_stealth ║   0.65  ║   0.61  ║   0.87  ║   0.76   ║
+╠══════════════╬═════════╬═════════╬═════════╬══════════╣
+║     nikto    ║   0.63  ║   0.91  ║   0.94  ║   0.94   ║
+╠══════════════╬═════════╬═════════╬═════════╬══════════╣
+║     dirb     ║   0.62  ║   0.81  ║   0.86  ║   0.89   ║
+╠══════════════╬═════════╬═════════╬═════════╬══════════╣
+║   all_tools  ║   0.82  ║   0.94  ║   0.96  ║   0.96   ║
+╠══════════════╬═════════╬═════════╬═════════╬══════════╣
+║    average   ║  0.734  ║  0.840  ║  0.914  ║   0.906  ║
+╚══════════════╩═════════╩═════════╩═════════╩══════════╝</pre>
+
+              <div class="title headline" style="">Conclusion</div>
+              <p style="padding-top: 20px;">Here I have proven that a logistic regression machine learning model can be trained from vector representations of packets. These vectors were obtained by training a Word2Vec model on the packet data.
+              <br /><br />Furthermore, I conclude that a vector representation of 1x50 on packets is adequate enough to capture the whole meaning of the packet. With this research, network security datasets can be easily created to further push machine learning in the security domain.</p>
+
+            </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>var my_element = document.getElementById("auto_feature");
+    if (performance.navigation.type == performance.navigation.TYPE_BACK_FORWARD || performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+    }else{
+      my_element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    }
+    </script>
+  </body>
+  </html>
