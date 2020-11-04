@@ -48,14 +48,23 @@
               The first thing I do is I capture packets on the network. While I do this, I start using the enumeration tool for that specific trial. Throughout my trails, I used <a href="https://en.wikipedia.org/wiki/Nmap" target="_blank">nmap</a>, <a href="https://en.wikipedia.org/wiki/Nikto_(vulnerability_scanner)" target="_blank">nikto</a>, and <a href="https://tools.kali.org/web-applications/dirb#:~:text=DIRB%20is%20a%20Web%20Content,server%20and%20analyzing%20the%20response.&text=Also%20DIRB%20sometimes%20can%20be,scanner%20not%20a%20vulnerability%20scanner." target="_blank">dirb</a>. After a set amount of time has passed, the capture completes. The program I wrote then creates a "pcap" file and a text file containing
               the number identification of each packet that was malicious. The malicious packets are the ones created by the enumeration tool.
               <br /><br />
-              Then I perform preprocessing on the raw packet data. This includes remove the source and destination IP (so that the logistic regression machine learning model does not pick up on this), I lowercase the packet, and I remove anything that isn't a number or a letter.
+              Then I perform preprocessing on the raw packet data. This includes removing the source and destination IP (so that the logistic regression machine learning model does not pick up on this) and I remove anything that isn't a number or a letter.
+              Here is what the final result will look like:
+
+              <p style="text-align:center; padding-top: 10px;"><a href="images/preprocessed_packet.png" target= "_blank"><img src="images/preprocessed_packet.png" style="border-radius: 10px"></a></p>
 
               <br /><br />
-              I then feed it into a <a href="https://en.wikipedia.org/wiki/Word2vec" target="_blank">Word2Vec</a> neural network model. One useful thing about Word2Vec is it can return 1xN
-              word embeddings (word vectors). The issue is that these vectors only represent the individual words of the packets. So I have to perform a summation of all of the vectors in the packet, and then divide by the number of packets. This returns a vector representation of an entire packet rather than an individual word.
+              I then feed it into a <a href="https://en.wikipedia.org/wiki/Word2vec" target="_blank">Word2Vec</a> neural network model. One useful thing about Word2Vec is it can return <i>n</i> dimensional
+              word embeddings (word vectors). The issue is that these vectors only represent the individual words of the packets. So I have to perform a summation of all of the vectors in the packet, and then divide by the number of words in that packet. This returns a vector representation of an entire packet rather than an individual word.
+              Here's an arbitrary example of what this would look like with a 5 dimensional vector.
+
+                <p style="text-align:center; padding-top: 25px;"><a href="images/packet_vector.png" target= "_blank"><img src="images/packet_vector.png"></a></p>
 
               <br /><br />
-              Each number in the vector is then declared a feature for machine learning datasets. I compile a dataset with every packet vector.
+              Each index in the vector is then declared a feature for machine learning datasets. I compile a dataset with every packet vector. Here's an example of what a dataset may look like:
+
+              <p style="text-align:center; padding-top: 25px;"><a href="images/dataset.png" target= "_blank"><img src="images/dataset.png"></a></p>
+              Each row represents a single packet.
             </p>
 
             <div class="title headline" style="">The Results</div>
@@ -106,16 +115,16 @@
                 </tr>
               </table><br />
 
-              After creating the datasets using the packet captures, I then trained a logistic regression machine learning model. Here are the results, starting with precision, recall, and then f1 score. Note: 1x10 indicates that the vector representation of a packet was 10 dimensional.<br /><br />
+              After creating the datasets using the packet captures, I then trained a logistic regression machine learning model. Here are the results, starting with precision, recall, and then f1 score. Note: 10x1 indicates that the vector representation of a packet was 10 dimensional.<br /><br />
 
-              Precision
+              <b>Precision</b>
               <table>
                 <tr>
                 <th></th>
-                <th>1x10 Prec.</th>
-                <th>1x25 Prec.</th>
-                <th>1x50 Prec.</th>
-                <th>1x100 Prec.</th>
+                <th>10x1 Prec.</th>
+                <th>25x1 Prec.</th>
+                <th>50x1 Prec.</th>
+                <th>100x1 Prec.</th>
                 </tr>
                 <tr>
                   <td>nmap</td>
@@ -161,14 +170,16 @@
                 </tr>
               </table><br />
 
-              Recall
+              <p style="text-align:center; padding-top: 25px;"><a href="images/precision_graph.png" target= "_blank"><img src="images/precision_graph.png"></a></p>
+
+              <b>Recall</b>
               <table>
                 <tr>
                 <th></th>
-                <th>1x10 Rec.</th>
-                <th>1x25 Rec.</th>
-                <th>1x50 Rec.</th>
-                <th>1x100 Rec.</th>
+                <th>10x1 Rec.</th>
+                <th>25x1 Rec.</th>
+                <th>50x1 Rec.</th>
+                <th>100x1 Rec.</th>
                 </tr>
                 <tr>
                   <td>nmap</td>
@@ -214,14 +225,16 @@
                 </tr>
               </table><br />
 
-              F1 Score
+              <p style="text-align:center; padding-top: 25px;"><a href="images/recall_graph.png" target= "_blank"><img src="images/recall_graph.png"></a></p>
+
+              <b>F1 Score</b>
               <table>
                 <tr>
                 <th></th>
-                <th>1x10 F1</th>
-                <th>1x25 F1</th>
-                <th>1x50 F1</th>
-                <th>1x100 F1</th>
+                <th>10x1 F1</th>
+                <th>25x1 F1</th>
+                <th>50x1 F1</th>
+                <th>100x1 F1</th>
                 </tr>
                 <tr>
                   <td>nmap</td>
@@ -270,7 +283,14 @@
 
               <div class="title headline" style="">Conclusion</div>
               <p style="padding-top: 20px;">Here I have proven that a logistic regression machine learning model can be trained from vector representations of packets. These vectors were obtained by training a Word2Vec model on the packet data.
-              <br /><br />Furthermore, I conclude that a vector representation of 1x50 on packets is adequate enough to capture the whole meaning of the packet. With this research, network security datasets can be easily created to further push machine learning in the security domain.</p>
+              <br /><br />Furthermore, I conclude that a vector representation of 50 x 1 on packets is adequate enough to capture the whole meaning of the packet. With this research, network security datasets can be easily created to further push machine learning in the security domain.</p>
+
+
+              <div class="title headline" style="">Future Possibilities</div>
+              <p style="padding-top: 20px;"> A possibility is to explore the idea of placing this system behind a traditional intrusion detection system (IDS). IDS' are known to produce a large array of false positives.
+              I believe that implementing this system to check <i>any</i> positives made by the IDS would greatly reduce false positives. This could be thought of as another line of defense.</p>
+
+              <p style="text-align:center; padding-top: 25px;"><a href="images/behind_ids.png" target= "_blank"><img src="images/behind_ids.png"></a></p>
 
             </p>
             </div>
